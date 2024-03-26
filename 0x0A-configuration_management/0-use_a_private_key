@@ -1,4 +1,8 @@
-#!/usr/bin/env bash
-# Connects to server 34.229.161.131 with key in ~/.ssh/school
+# creates a file in /tmp
 
-ssh -i ~/.ssh/school ubuntu@34.229.161.131
+file { '/tmp/school':
+  content =>'I love Puppet',
+  mode    => '0744',
+  owner   => 'www-data',
+  group   => 'www-data',
+}
